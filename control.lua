@@ -457,9 +457,17 @@ function ontick(event)
           showSettingsButton(pi)
         end 
       elseif player.opened == nil then --and glob.opened[pi] ~= nil then
+        local gui = player.gui.left
+        if gui.stGui ~= nil then
+          gui = gui.stGui
+          if gui.stButtons.toggleSTSettings ~= nil then
             destroyGui(player.gui.left.stGui.stButtons.toggleSTSettings)
+          elseif gui.stSettings.stGlobalSettings ~= nil then
             destroyGui(player.gui.left.stGui.stSettings.stGlobalSettings)
+          elseif gui.trainSettings ~= nil then
             destroyGui(player.gui.left.stGui.trainSettings)
+          end
+        end
       end
     end
   end
