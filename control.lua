@@ -855,11 +855,11 @@ function ontick(event)
         end
       elseif player.opened == nil then
         local gui=player.gui.left.stGui
-        if gui.stSettings ~= nil then
-          destroyGui(player.gui.left.stGui.stSettings.toggleSTSettings)
-          destroyGui(player.gui.left.stGui.stSettings.stGlobalSettings)
-        end
-        if gui ~= nil then
+        if gui then
+          if gui.stSettings ~= nil then
+            destroyGui(player.gui.left.stGui.stSettings.toggleSTSettings)
+            destroyGui(player.gui.left.stGui.stSettings.stGlobalSettings)
+          end
           destroyGui(player.gui.left.stGui.trainSettings)
           --destroyGui(player.gui.left.stGui.scheduleSettings)
           --destroyGui(player.gui.left.stGui.dynamicRules)
