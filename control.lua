@@ -864,6 +864,8 @@ function ontick(event)
           --destroyGui(player.gui.left.stGui.scheduleSettings)
           --destroyGui(player.gui.left.stGui.dynamicRules)
           destroyGui(player.gui.left.stGui.trainLines)
+        elseif gui == nil then
+          buildGUI(player)
         end
       end
     end
